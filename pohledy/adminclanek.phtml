@@ -1,0 +1,32 @@
+				<section class="page-header">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<ul class="breadcrumb">
+									<li><a href="#">Home</a></li>
+									<li class="active">About Us</li>
+								</ul>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<h1><?= $titulek ?></h1>
+    							</div>
+						</div>
+					</div>
+				</section>
+				<div class="container">
+					<div class="row">
+    <form action="" method="post">
+    <table class="table table-bordered">
+        <tr><td>Titulek :</td><td><input type="text" name="titulek" class="form-control input-group-lg" size="35" value="<?= $titulek ?>" ></td></tr>
+        <tr><td>Klíčová slova :</td><td><input type="text" class="form-control input-group-lg" name="klicova_slova" size="35" value="<?= $klicova_slova ?>" ></td></tr>
+        <tr><td>Popis webu :</td><td><input type="text" class="form-control input-group-lg" name="popisek" size="35" value="<?= $popisek ?>" ></td></tr>
+        <tr><td>Pořadí :</td><td><input type="text" name="poradi" size="35" value="<?= $poradi ?>" ></td></tr>
+        <tr><td colspan="2"><textarea id="e1m1" class="form-control input-group-lg" name="obsah" rows="15"> <?= $_obsah ?></textarea></td></tr>
+        <tr><td colspan="2" align="right"><input style="text-align: right;" type="submit" name="Ulozit" value="Uložit"</td></tr>
+    </table>
+    </form>
+
+                                        </div>
+                                </div>

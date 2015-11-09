@@ -1,0 +1,12 @@
+                                                                                    <nav>
+                                                                                        <ul class="nav nav-pills" id="mainNav">
+                                                                                            <li>
+                                                                                                <a class="dropdown-toggle" href="/">Home</a>
+                                                                                            </li>
+                                                                                            <?php foreach ($menus as $menu) {?>
+                                                                                            <li>
+                                                                                                <a href="<?= $menu['url'] ?>" <?php if ($menu['aktivni']) echo 'class="active"';  ?> ><?= $menu["nazev"] ?></a>
+                                                                                            </li>
+                                                                                            <?php }?>
+                                                                                        </ul>
+                                                                                    </nav>
