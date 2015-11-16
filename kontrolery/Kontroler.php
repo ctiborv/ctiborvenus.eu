@@ -14,6 +14,7 @@ abstract class Kontroler
 	// Pole, jehož indexy jsou poté viditelné v šabloně jako běžné proměnné
     protected $data = array();
     protected $neodata = array();
+    protected $js = "";
 	// Název šablony bez přípony
     protected $pohled = "";
 	// Hlavička HTML stránky

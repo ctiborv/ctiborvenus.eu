@@ -1,27 +1,101 @@
-<section >
-				<header>
-						<h2>Kontaktní formulář</h2>
-						<p>Kontaktujte nás odesláním formuláře níže.</p>
-				</header>
-				<div class="content style4 featured">
-					<div class="container 75%">
-						<form method="post" action="#">
-							<div class="row 50%">
-								<div class="6u 12u(mobile)"><input type="text" name="jmeno" placeholder="Jméno" /></div>
-								<div class="6u 12u(mobile)"><input type="text" name="email" placeholder="Email" /></div>
+				<section class="page-header">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<ul class="breadcrumb">
+									<li><a href="#">Administrace</a></li>
+									<li class="active">Články</li>
+								</ul>
 							</div>
-							<div class="row 50%">
-								<div class="12u"><textarea name="message" name="zprava" placeholder="Zpráva"></textarea></div>
-							</div>
-							<div class="row">
-								<div class="12u">
-									<ul class="actions">
-										<li><input type="submit" class="buttonf" value="Odeslat zprávu" /></li>
-										<li><input type="reset" class="buttonf alt" value="Vymazat formulář" /></li>
-									</ul>
-								</div>
-							</div>
-						</form>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<h1>Administrace článků</h1>
+    							</div>
+						</div>
 					</div>
-				</div>
-</section>
+				</section>
+                                <div class="container">
+                                    <div class="row">
+						<div class="col-md-6">
+
+							<div class="offset-anchor" id="contact-sent"></div>
+ 
+								<div class="alert alert-success" id="contactSuccess">
+									<strong>Success!</strong> Your message has been sent to us.
+								</div>
+
+							<h2 class="mb-sm mt-sm"><strong>Kontaktujte</strong> mě</h2>
+							<form id="contactForm" action="<?php echo basename($_SERVER['PHP_SELF']); ?>" method="POST" enctype="multipart/form-data">
+								<input type="hidden" value="true" name="emailSent" id="emailSent">
+								<div class="row">
+									<div class="form-group">
+										<div class="col-md-6">
+											<label>Vaše jméno *</label>
+											<input type="text" value="" data-msg-required="Prosím uveďte Vaše jméno." maxlength="100" class="form-control" name="name" id="name" required>
+										</div>
+										<div class="col-md-6">
+											<label>Váš email *</label>
+											<input type="email" value="" data-msg-required="Prosím uveďte Váš email." data-msg-email="Prosím uveďte validní emailovou adresu." maxlength="100" class="form-control" name="email" id="email" required>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="form-group">
+										<div class="col-md-12">
+											<label>Typ požadované služby</label>
+											<select data-msg-required="Prosím vyberte položku ze seznamu." class="form-control" name="subject" id="subject" required>
+												<option value="">...</option>
+												<option value="Option 1">IT Servis</option>
+												<option value="Option 2">Webové stránky</option>
+												<option value="Option 3">Programování</option>
+												<option value="Option 4">Jiné</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="form-group">
+										<div class="col-md-12">
+											<label>Příloha</label>
+											<input type="file" name="attachment" id="attachment">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="form-group">
+										<div class="col-md-12">
+											<label>Zpráva *</label>
+											<textarea maxlength="5000" data-msg-required="Prosím napište Vaši zprávu." rows="6" class="form-control" name="message" id="message" required></textarea>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<label>Ochrana proti botům * (dvě plus čtyři je - vyplňte číslo)</label>
+                                                                                <input type="text" value="" data-msg-required="dvě plus čtyři je - vyplňte číslo." maxlength="50" class="form-control" name="antispam" id="antispam" required>
+									</div>
+								</div>
+								<div class="row">
+									<div class="form-group">
+
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<hr>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<input type="submit" value="Send Message" class="btn btn-primary btn-lg pull-right" data-loading-text="Loading...">
+									</div>
+								</div>
+							</form>
+						</div>
+
+					</div>
+                                </div>
+	
+        
+                                </div>
+

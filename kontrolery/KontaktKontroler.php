@@ -14,11 +14,15 @@ class KontaktKontroler extends Kontroler
 		{
 			if ($_POST['rok'] == date("Y"))
 			{
+                                $zprava=$_POST['zprava'];
+                                $email = $_POST['email'];
+                                
 				$odesilacEmailu = new OdesilacEmailu();
-				$odesilacEmailu->odesli("admin@adresa.cz", "Email z webu", $_POST['zprava'], $_POST['email']);
+				$odesilacEmailu->odesli("info@ctiborvenus.eu", "Email z webu", $_POST['zprava'], $_POST['email']);
 			}
 		}
 		
 		$this->pohled = 'kontakt';
+                $this->js = 'view.contact.js';
     }
 }

@@ -33,6 +33,7 @@ class Menu {
                 $menuklient[]=array('url'=>'clanek/'.$clanek['url'],'nazev'=>$clanek['titulek']);
                 
             }
+            $menuklient[]=array('url'=>'/kontakt','nazev'=>'kontakt');
             $menuklient[]=array('url'=>'/login','nazev'=>'Přihlásit');
             return $menuklient;
     }
