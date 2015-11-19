@@ -19,10 +19,12 @@ Version: 		4.3.1
 				$messageError = $('#contactError'),
 				$submitButton = $(this.submitButton);
 
-			$submitButton.button('loading');
-
+//			$submitButton.button('loading');
+                        
+                        $form.submit();
+                         
 			// Ajax Submit
-			$.ajax({
+/*			$.ajax({
 				type: 'POST',
 				url: $form.attr('action'),
 				data: {
@@ -78,7 +80,8 @@ Version: 		4.3.1
 					$submitButton.button('reset');
 
 				}
-			});
+			});*/
+        
 		}
 	});
 
