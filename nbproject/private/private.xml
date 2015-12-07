@@ -5,9 +5,13 @@
         <group>
             <file>file:/C:/weby/ctiborvenus/pohledy/kontakt.phtml</file>
             <file>file:/C:/weby/ctiborvenus/kontrolery/KontaktKontroler.php</file>
+            <file>file:/C:/weby/ctiborvenus/pohledy/clanek.phtml</file>
             <file>file:/C:/weby/ctiborvenus/pohledy/rozlozeni.phtml</file>
+            <file>file:/C:/weby/ctiborvenus/pohledy/clanky.phtml</file>
+            <file>file:/C:/weby/ctiborvenus/assets/css/theme.css</file>
             <file>file:/C:/weby/ctiborvenus/assets/js/views/view.contact.js</file>
             <file>file:/C:/weby/ctiborvenus/webovky.html</file>
+            <file>file:/C:/weby/ctiborvenus/o-mne.html</file>
             <file>file:/C:/weby/ctiborvenus/modely/Menu.php</file>
         </group>
     </open-files>

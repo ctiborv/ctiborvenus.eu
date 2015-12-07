@@ -204,10 +204,15 @@ li {
 }
 
 #header .header-motto {
-	position: relative;
-  font-style: italic;
-  display: inline;
-  margin-top: 15px;
+	position: absolute;
+    display: inline;
+    margin-left: 0px;
+    top:35px;
+    font-variant: small-caps;
+	color: #0088cc;
+        text-align:center;
+        vertical-align: middle;
+        font-size:1.3em;
 }
 
 #header .header-logo img {
