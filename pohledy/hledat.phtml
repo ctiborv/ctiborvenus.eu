@@ -1,0 +1,41 @@
+				<section class="page-header">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<ul class="breadcrumb">
+									<li><a href="#">Vyhledávání</a></li>
+									<li class="active"><?= $_GET["q"] ?></li>
+								</ul>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<h1>Nalezené články</h1>
+    							</div>
+						</div>
+					</div>
+				</section>
+				<div class="container">
+					<div class="row">
+<table class="table table-hover">
+<?php 
+
+    $index=0;
+    $last = count($clanky)-1;
+    foreach ($clanky as $clanek) :  
+    ?>       
+       <tr>
+            <td><a href="clanek/<?= $clanek['url'] ?>"><?= $clanek['titulek'] ?></td>
+       </tr>
+<?php     
+    $index++;
+    endforeach
+    
+?>
+   </table>
+
+                                        </div>
+                                </div>
+
+ 
+    

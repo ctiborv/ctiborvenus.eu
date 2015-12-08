@@ -64,6 +64,7 @@ class AdminClanekKontroler extends Kontroler {
 			$this->data['klicova_slova'] = $clanek['klicova_slova'];
 			$this->data['popisek'] = $clanek['popisek'];
 			$this->data['titulek'] = $clanek['titulek'];
+			$this->data['url'] = $clanek['url'];
 			$this->data['poradi'] = $clanek['poradi'];
 			$this->data['obsah'] = $clanek['obsah'];
 			$this->data['skryt'] = $clanek['skryt'];
@@ -95,7 +96,7 @@ class AdminClanekKontroler extends Kontroler {
                 $this->_kontrolerMd->ulozClanek($parametry[0],$_POST);
             }
             else {
-                    $_POST['url']=$this->friendly_url($_POST['titulek']);
+                    if (empty($_POST['url'])) $_POST['url']=$this->friendly_url($_POST['titulek']);
                     $this->_kontrolerMd->vlozClanek($_POST);
                     $this->presmeruj('adminClanek/');
             }

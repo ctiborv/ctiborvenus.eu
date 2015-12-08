@@ -13,6 +13,16 @@ class SpravceClanku
 			WHERE `url` = ?
 		', array($url));
 	}
+ 
+	public function vratPrvniClanek()
+	{
+		return Db::dotazJeden('
+			SELECT `clanky_id`, `titulek`, `obsah`, `url`, `popisek`, `klicova_slova`,`slider`,`poradi`, `skryt`
+			FROM `clanky` 
+			ORDER BY poradi ASC
+                        LIMIT 1
+		');
+	}        
         
         public function vymazClanek($id)
 	{
@@ -66,7 +76,17 @@ class SpravceClanku
 		');          
         }
         
-	// Vrátí seznam článků v databázi
+	public function hledejClanky($params)
+	{
+            $params=array('%'.$params.'%','%'.$params.'%','%'.$params.'%','%'.$params.'%');
+		return Db::dotazVsechny('
+			SELECT `clanky_id`, `titulek`, `url`, `popisek`,`poradi`,`skryt`
+			FROM `clanky`
+                        WHERE `titulek` LIKE ? or `popisek` LIKE ? or `obsah` LIKE ? or `klicova_slova` LIKE ? 
+			ORDER BY `poradi` ASC
+		',$params);
+	}
+
 	public function vratClanky()
 	{
 		return Db::dotazVsechny('
@@ -75,6 +95,7 @@ class SpravceClanku
 			ORDER BY `poradi` ASC
 		');
 	}
+               
         
 	public function vratClankyKlient()
 	{

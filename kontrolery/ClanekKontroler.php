@@ -30,9 +30,9 @@ class ClanekKontroler extends Kontroler
 			// Získání článku podle URL
 			$clanek = $spravceClanku->vratClanek($parametry[0]);
 			// Pokud nebyl článek s danou URL nalezen, přesměrujeme na ChybaKontroler
-			if (!$clanek)
-			$clanek = $spravceClanku->vratClanek('uvod');
-		
+			if (!$clanek) {
+			$clanek = $spravceClanku->vratPrvniClanek();
+                        }
 			// Hlavička stránky
 			$this->hlavicka = array(
 				'titulek' => $clanek['titulek'],
