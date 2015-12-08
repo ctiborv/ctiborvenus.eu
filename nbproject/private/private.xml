@@ -3,13 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/weby_git/ctiborvenus.eu/pohledy/rozlozeni.phtml</file>
+            <file>file:/C:/weby_git/ctiborvenus.eu/modely/SpravceClanku.php</file>
             <file>file:/C:/weby_git/ctiborvenus.eu/webovky.html</file>
-            <file>file:/C:/weby_git/ctiborvenus.eu/assets/css/theme.css</file>
-            <file>file:/C:/weby_git/ctiborvenus.eu/o-mne.html</file>
-            <file>file:/C:/weby_git/ctiborvenus.eu/it-servis.html</file>
-            <file>file:/C:/weby_git/ctiborvenus.eu/assets/css/theme-elements.css</file>
-            <file>file:/C:/weby_git/ctiborvenus.eu/modely/Menu.php</file>
+            <file>file:/C:/weby_git/ctiborvenus.eu/pohledy/adminclanky.phtml</file>
+            <file>file:/C:/weby_git/ctiborvenus.eu/pohledy/clanky.phtml</file>
+            <file>file:/C:/weby_git/ctiborvenus.eu/kontrolery/AdminClanekKontroler.php</file>
+            <file>file:/C:/weby_git/ctiborvenus.eu/kontrolery/ClanekKontroler.php</file>
         </group>
     </open-files>
 </project-private>
