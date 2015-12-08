@@ -17,15 +17,13 @@ class KontaktKontroler extends Kontroler
                     $zprava = $_POST['message'];
                     $telefon = $_POST['phone'];
                     if ($antispam==6) {
-                        $zprava = '
-                            Jméno: $jmeno
-                            Email: $email
-                            Služba: $sluzba
-                            Telefon : $telefon
+                        $zprava = "
+                            Jméno: $jmeno<br/>
+                            Email: $email<br/>
+                            Služba: $sluzba<br/>
+                            Telefon : $telefon<br/>
                             Zprava : $zprava
-                           ';
-                        $zprava=$_POST['zprava'];
-                        $email = $_POST['email'];
+                           ";
 
                         $odesilacEmailu = new OdesilacEmailu();
                         $odesilacEmailu->odesli("info@ctiborvenus.eu", "Email z webu", $zprava, $email);

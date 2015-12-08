@@ -12,9 +12,9 @@ class Menu {
     public function __construct() {
         
 
-            $_menuadmin[]=array('url'=>'/adminclanek','nazev'=>'Články');
-            $_menuadmin[]=array('url'=>'/adminnastaveni','nazev'=>'Nastavení');
-            $_menuadmin[]=array('url'=>'/logout','nazev'=>'Odhlásit');
+            $_menuadmin[]=array('url'=>'/AdminClanek','nazev'=>'Články');
+            $_menuadmin[]=array('url'=>'/AdminNastaveni','nazev'=>'Nastavení');
+            $_menuadmin[]=array('url'=>'/Logout','nazev'=>'Odhlásit');
             
             $this->_menuadmin=$_menuadmin;
             

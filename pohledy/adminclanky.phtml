@@ -30,15 +30,15 @@
     $last = count($clanky)-1;
     foreach ($clanky as $clanek) :  
         if (!$index) $sipkanahoru='';
-        else $sipkanahoru='<a href="adminClanek/posunnahoru/'.$clanek['clanky_id'].'/'.$clanek['poradi'].'">▲</a>';
+        else $sipkanahoru='<a href="AdminClanek/posunnahoru/'.$clanek['clanky_id'].'/'.$clanek['poradi'].'">▲</a>';
         if ($index==$last) $sipkadolu='';
-        else $sipkadolu='<a href="adminClanek/posundolu/'.$clanek['clanky_id'].'/'.$clanek['poradi'].'">▼</a>';
+        else $sipkadolu='<a href="AdminClanek/posundolu/'.$clanek['clanky_id'].'/'.$clanek['poradi'].'">▼</a>';
     ?>       
        <tr>
             <td><a href="clanek/<?= $clanek['url'] ?>"><?= $clanek['titulek'] ?></td>
             <td><?= $sipkanahoru.'</br>'.$sipkadolu ?></td>
-            <td><a href="adminclanek/<?= $clanek['url'] ?>">Upravit</td>
-            <td><a href="adminclanek/vymaz/<?= $clanek['clanky_id'] ?>" title="Vymazat">X</a></td>
+            <td><a href="AdminClanek/<?= $clanek['url'] ?>">Upravit</td>
+            <td><a href="AdminClanek/vymaz/<?= $clanek['clanky_id'] ?>" title="Vymazat">X</a></td>
        </tr>
 <?php     
     $index++;

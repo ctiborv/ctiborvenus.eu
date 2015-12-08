@@ -24,7 +24,13 @@ function autoloadFunkce($trida)
 spl_autoload_register("autoloadFunkce");
 
 // Připojení k databázi
-Db::pripoj("127.0.0.1", "root", "", "ctiborvenus");
+if ($_SERVER["SERVER_NAME"]=='localhost') {
+    Db::pripoj("127.0.0.1", "root", "", "ctiborvenus");
+}
+else {
+    Db::pripoj("wm84.wedos.net", "w98406_cveu", "8RMRNVDQ", "d98406_cveu");
+    
+}
 
 session_start();
 
