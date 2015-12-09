@@ -26,7 +26,7 @@ class HledatKontroler extends Kontroler {
 
     		if (!empty($_GET["q"]))
 		{
-                    $text= mysql_real_escape_string($_GET["q"]);
+                    $text= $_GET["q"];
                     $clanky = $this->_kontrolerMd->hledejClanky($text);
                     $this->data['clanky'] = $clanky;
                     $this->pohled = 'hledat';
