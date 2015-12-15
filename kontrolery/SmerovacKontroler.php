@@ -58,7 +58,7 @@ class SmerovacKontroler extends Kontroler
 
 		// Nastavení proměnných pro šablonu
 
-      		$this->data['titulek'] = $nastaveniData['title'].$this->kontroler->hlavicka['titulek'];
+      		$this->data['titulek'] = $nastaveniData['title']." - ".$this->kontroler->hlavicka['titulek'];
 		$this->data['popis'] = $nastaveniData['description'].$this->kontroler->hlavicka['popis'];
 		$this->data['klicova_slova'] = $nastaveniData['keywords'].$this->kontroler->hlavicka['klicova_slova'];
 		$this->data['slidery'] = $this->kontroler->hlavicka['slidery'];
