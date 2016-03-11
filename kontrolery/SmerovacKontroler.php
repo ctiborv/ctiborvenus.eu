@@ -7,12 +7,14 @@ class SmerovacKontroler extends Kontroler
 {
 	// Instance controlleru
 	protected $kontroler;
+	protected $clanek_Kontroler;
+        
 	
 	// Metoda převede pomlčkovou variantu controlleru na název třídy
 	private function pomlckyDoVelbloudiNotace($text) 
 	{
 		$veta = str_replace('-', ' ', $text);
-		$veta = ucwords($veta);
+//		$veta = ucwords($veta);
 		$veta = str_replace(' ', '', $veta);
 		return $veta;
 	}
@@ -38,18 +40,26 @@ class SmerovacKontroler extends Kontroler
 				
 		if (empty($naparsovanaURL[0]))		
                     if ($_SESSION['admin']==1) {
-                           $tridaKontroleru = 'AdminNastaveniKontroler';
+                       $this->kontroler = new AdminClanekKontroler();
                     }
-                    else $tridaKontroleru = 'ClanekKontroler';
-		// kontroler je 1. parametr URL
+                    else {
+                        $this->kontroler = new ClanekKontroler();
+                    }
                 else {
-                    $tridaKontroleru = $this->pomlckyDoVelbloudiNotace(array_shift($naparsovanaURL)) . 'Kontroler';
+                    $nazevStranky = $naparsovanaURL[0];
+                    $this->clanek_Kontroler = new ClanekKontroler();
+                    if (!$this->clanek_Kontroler->jeClanek($nazevStranky)){
+                        $tridaKontroleru=$nazevStranky.'Kontroler';
+                        if (file_exists('kontrolery/' . $tridaKontroleru . '.php')) {
+                            $this->kontroler = new $tridaKontroleru;
+                        }
+                        else {
+                            $this->presmeruj('chyba');
+                        }
+                    }
+                    else 
+                        $this->kontroler = $this->clanek_Kontroler;
                 }
-		if (file_exists('kontrolery/' . $tridaKontroleru . '.php'))
-			$this->kontroler = new $tridaKontroleru;
-		else
-			$this->presmeruj('chyba');
-		
 		// Volání controlleru
                 $this->kontroler->zpracuj($naparsovanaURL);
 

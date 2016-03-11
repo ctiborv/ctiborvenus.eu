@@ -30,7 +30,7 @@ class Menu {
 		');
             
             foreach ($clanky as $clanek) {
-                $menuklient[]=array('url'=>'clanek/'.$clanek['url'],'nazev'=>$clanek['titulek']);
+                $menuklient[]=array('url'=>'/'.$clanek['url'],'nazev'=>$clanek['titulek']);
                 
             }
             $menuklient[]=array('url'=>'/kontakt','nazev'=>'kontakt');

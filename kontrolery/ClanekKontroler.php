@@ -53,4 +53,13 @@ class ClanekKontroler extends Kontroler
 			// Nastavení šablony
 			$this->pohled = 'clanek';
     }
+    
+    public function jeClanek($parametry) {
+       		$spravceClanku = new SpravceClanku();
+		$clanek = $spravceClanku->vratClanek($parametry);     
+		if (!$clanek) return 0;
+                else return 1;
+    }
+                
+    
 }
