@@ -1,14 +1,18 @@
-				<section class="page-header">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-12">
-								<h1><?= $titulek ?></h1>
-							</div>
-						</div>
-					</div>
-				</section>
-				<div class="container">
+                        <?php 
+                        
+                                
+                                
+                        if (!$_homepage) { ?>            
+                                <div class="container">
 					<div class="row">
+                                            <?php
+                                            }
+                                            ?>
+                                            
                                             <?= $_obsah; ?>
+                        <?php if (!$_homepage) { ?>            
                                         </div>
                                 </div>
+                                            <?php
+                                            }
+                                            ?>

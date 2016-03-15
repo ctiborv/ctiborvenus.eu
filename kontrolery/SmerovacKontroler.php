@@ -37,7 +37,6 @@ class SmerovacKontroler extends Kontroler
     public function zpracuj($parametry)
     {
 		$naparsovanaURL = $this->parsujURL($parametry[0]);
-				
 		if (empty($naparsovanaURL[0]))		
                     if ($_SESSION['admin']==1) {
                        $this->kontroler = new AdminClanekKontroler();

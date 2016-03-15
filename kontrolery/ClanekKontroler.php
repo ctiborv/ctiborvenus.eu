@@ -31,7 +31,7 @@ class ClanekKontroler extends Kontroler
 			$clanek = $spravceClanku->vratClanek($parametry[0]);
 			// Pokud nebyl článek s danou URL nalezen, přesměrujeme na ChybaKontroler
 			if (!$clanek) {
-			$clanek = $spravceClanku->vratPrvniClanek();
+			$clanek = $spravceClanku->vratHomepageClanek();
                         }
 			// Hlavička stránky
 			$this->hlavicka = array(
@@ -44,6 +44,7 @@ class ClanekKontroler extends Kontroler
 			// Naplnění proměnných pro šablonu		
 			$this->data['titulek'] = $clanek['titulek'];
 			$this->data['obsah'] = $clanek['obsah'];
+                        $this->data['homepage']= $clanek['homepage'];
 			if ($clanek['slider']){
                             
                             $sliderM = new Slider();

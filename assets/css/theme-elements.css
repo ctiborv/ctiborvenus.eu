@@ -5448,12 +5448,10 @@ section.timeline .timeline-box .owl-carousel {
 /* Light */
 .section-text-light .testimonial.testimonial blockquote:before, .section-text-light .testimonial.testimonial blockquote:after, .section-text-light .testimonial.testimonial blockquote p {
 	opacity: 0.9;
-	color: #FFF;
 }
 
 .section-text-light .testimonial.testimonial .testimonial-author span, .section-text-light .testimonial.testimonial .testimonial-author strong {
 	opacity: 0.6;
-	color: #FFF;
 }
 
 /* Social Icons */

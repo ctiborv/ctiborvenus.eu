@@ -8,7 +8,7 @@ class SpravceClanku
 	public function vratClanek($url)
 	{
 		return Db::dotazJeden('
-			SELECT `clanky_id`, `titulek`, `obsah`, `url`, `popisek`, `klicova_slova`,`slider`,`poradi`, `skryt`
+			SELECT `clanky_id`, `titulek`, `obsah`, `url`, `popisek`, `klicova_slova`,`slider`,`poradi`, `skryt`,`homepage`
 			FROM `clanky` 
 			WHERE `url` = ?
 		', array($url));
@@ -17,9 +17,19 @@ class SpravceClanku
 	public function vratPrvniClanek()
 	{
 		return Db::dotazJeden('
-			SELECT `clanky_id`, `titulek`, `obsah`, `url`, `popisek`, `klicova_slova`,`slider`,`poradi`, `skryt`
+			SELECT `clanky_id`, `titulek`, `obsah`, `url`, `popisek`, `klicova_slova`,`slider`,`poradi`, `skryt`,`homepage`
 			FROM `clanky` 
 			ORDER BY poradi ASC
+                        LIMIT 1
+		');
+	}        
+
+	public function vratHomepageClanek()
+	{
+		return Db::dotazJeden('
+			SELECT `clanky_id`, `titulek`, `obsah`, `url`, `popisek`, `klicova_slova`,`slider`,`poradi`, `skryt`,`homepage`
+			FROM `clanky` 
+                        WHERE homepage=1
                         LIMIT 1
 		');
 	}        
