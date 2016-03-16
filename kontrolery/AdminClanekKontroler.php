@@ -40,6 +40,7 @@ class AdminClanekKontroler extends Kontroler {
                             $this->_kontrolerMd->vymazClanek($parametry[1]);
                             $this->presmeruj('adminClanek/');                        
                         }
+                        
                         if ($parametry[1]=='posundolu') {
                             $this->_kontrolerMd->posunClanek($parametry[1],$parametry[2],0);
                             $this->presmeruj('adminClanek/');                        
@@ -48,18 +49,18 @@ class AdminClanekKontroler extends Kontroler {
                             $this->_kontrolerMd->posunClanek($parametry[1],$parametry[2],1);
                             $this->presmeruj('adminClanek/');                        
                         }
+
                         if ($_POST['Ulozit']) { 
                             $this->ulozitClanek($parametry);
                             $this->presmeruj('adminClanek');
                        }
                         
-                        if ($parametry[1]!='novy') {
-			$clanek = $this->_kontrolerMd->vratClanek($parametry[1]);
-			// Pokud nebyl článek s danou URL nalezen, přesměrujeme na ChybaKontroler
-                        
-			if (!$clanek)
-				echo "Clanek nenalezen";
-		
+                        if ($parametry[1]=='edit') {
+
+                        if ($parametry[2]!='novy') {
+                        $clanek = $this->_kontrolerMd->vratClanek($parametry[2]);
+			if (!$clanek) echo "Clanek nenalezen";
+                        }
 			// Naplnění proměnných pro šablonu		
 			$this->data['klicova_slova'] = $clanek['klicova_slova'];
 			$this->data['popisek'] = $clanek['popisek'];
@@ -92,8 +93,8 @@ class AdminClanekKontroler extends Kontroler {
             $_POST['slider']=($_POST['slider']=='on');
             $_POST['skryt']=($_POST['skryt']=='on');
             
-            if ($parametry[1]!='novy') {
-                $this->_kontrolerMd->ulozClanek($parametry[1],$_POST);
+            if ($parametry[2]!='novy') {
+                $this->_kontrolerMd->ulozClanek($parametry[2],$_POST);
             }
             else {
                     if (empty($_POST['url'])) $_POST['url']=$this->friendly_url($_POST['titulek']);

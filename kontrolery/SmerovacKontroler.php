@@ -48,12 +48,13 @@ class SmerovacKontroler extends Kontroler
                     $nazevStranky = $naparsovanaURL[0];
                     $this->clanek_Kontroler = new ClanekKontroler();
                     if (!$this->clanek_Kontroler->jeClanek($nazevStranky)){
-                        $tridaKontroleru=$nazevStranky.'Kontroler';
+                        $tridaKontroleru=ucwords($nazevStranky).'Kontroler';
                         if (file_exists('kontrolery/' . $tridaKontroleru . '.php')) {
                             $this->kontroler = new $tridaKontroleru;
                         }
                         else {
                             $this->presmeruj('chyba');
+                            
                         }
                     }
                     else 
@@ -67,7 +68,7 @@ class SmerovacKontroler extends Kontroler
 
 		// Nastavení proměnných pro šablonu
 
-      		$this->data['titulek'] = $nastaveniData['title']." - ".$this->kontroler->hlavicka['titulek'];
+      		$this->data['titulek'] = $this->kontroler->hlavicka['titulek']." - ".$nastaveniData['title'];
 		$this->data['popis'] = $nastaveniData['description'].$this->kontroler->hlavicka['popis'];
 		$this->data['klicova_slova'] = $nastaveniData['keywords'].$this->kontroler->hlavicka['klicova_slova'];
 		$this->data['slidery'] = $this->kontroler->hlavicka['slidery'];

@@ -10,8 +10,8 @@ class SpravceClanku
 		return Db::dotazJeden('
 			SELECT `clanky_id`, `titulek`, `obsah`, `url`, `popisek`, `klicova_slova`,`slider`,`poradi`, `skryt`,`homepage`
 			FROM `clanky` 
-			WHERE `url` = ?
-		', array($url));
+			WHERE `url` = ? OR `clanky_id`= ?
+		', array($url,$url));
 	}
  
 	public function vratPrvniClanek()
@@ -43,9 +43,9 @@ class SpravceClanku
 	}
         
 
-        public function ulozClanek($url,$params)
+        public function ulozClanek($id,$params)
 	{
-                $where = array('url'=>$url);
+                $where = array('clanky_id'=>$id);
 		return Db::prikazUpdatePOST('
 			UPDATE `clanky`
                         SET

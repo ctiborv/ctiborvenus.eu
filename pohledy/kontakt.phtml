@@ -10,19 +10,14 @@
                                 <div class="container">
                                     <div class="row">
 						<div class="col-md-6">
-							<h4 class="heading-primary mt-lg">Buďte v <strong>kontaktu</strong></h4>
-							<p>Možností jak mě kontaktovat je mnoho. Pokud se "stydíte", vyplňte kontaktní formulář. Pokud spěcháte, zkuste Skype nebo telefon. </p>
-
-							<hr>
-
-							<h4 class="heading-primary"><strong>Kontaktní</strong> údaje</h4>
-							<ul class="list list-icons list-icons-style-3 mt-xlg">
-								<li><i class="fa fa-map-marker"></i> <strong>Address:</strong> Řídeč 330, Šternberk 78501</li>
+                                                    <h2 class="mb-sm mt-sm">Kontaktní údaje</h2>
+							<ul class="list list-icons list-icons-style-1 mt-xlg">
 								<li><i class="fa fa-phone"></i> <strong>Telefon:</strong> +420 605 260 772</li>
 								<li><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:info@ctiborvenus.eu">info@ctiborvenus.eu</a></li>
 								<li><i class="fa fa-skype"></i> <strong>Skype:</strong> <a href="<a href="skype:martyql?call">martyql</a></li>
                                                                 <li><i class="fa fa-info"></i> <strong>IČO:</strong> 03773540</p></li>
                                                                 <li><i class="fa fa-bank"></i> <strong>Bankovní spojení:</strong> 2630709013/0800</p></li>
+								<li><i class="fa fa-map-marker"></i> <strong>Address:</strong> Řídeč 330, Šternberk 78501</li>
 							</ul>
 							<hr>                                                    
 
@@ -31,12 +26,9 @@
                                                     
                                                 </div>
 						<div class="col-md-6">
-
                                                         <?php if ($odeslano) {?>
 							<h4 class="heading-primary mt-lg">Zpráva byla odeslána!</h4>
 							<p><?=$textodeslano?></p>
-
-							<hr>
                                                         <?php }
                                                         else  {
                                                         ?>
@@ -45,7 +37,7 @@
 								<?= $chyba ?>
 							</div>
                                                         <?php } ?>
-							<h2 class="mb-sm mt-sm"><strong>Kontaktní</strong> formulář</h2>
+							<h2 class="mb-sm mt-sm">Kontaktní <strong>formulář</strong></h2>
 							<form id="contactForma"  method="POST" >
 								<input type="hidden" value="true" name="emailSent" id="emailSent">
 								<div class="row">

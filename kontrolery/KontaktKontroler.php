@@ -43,7 +43,7 @@ class KontaktKontroler extends Kontroler
 		}
                 else {
 
-                    $idsluzba=$parametry[0];
+                    $idsluzba=$parametry[1];
                     if ($idsluzba) {
                         $moznost=$modelKontakt->vratMoznost($idsluzba);
                         $this->data['zprava']=$moznost['zprava'];
