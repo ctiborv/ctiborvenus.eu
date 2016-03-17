@@ -92,8 +92,7 @@ class AdminClanekKontroler extends Kontroler {
             
             $_POST['slider']=($_POST['slider']=='on');
             $_POST['skryt']=($_POST['skryt']=='on');
-            
-            if ($parametry[2]!='novy') {
+            if ($parametry[1]!='novy') {
                 $this->_kontrolerMd->ulozClanek($parametry[2],$_POST);
             }
             else {

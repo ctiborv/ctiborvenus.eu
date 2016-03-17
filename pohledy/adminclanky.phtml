@@ -35,7 +35,7 @@
         else $sipkadolu='<a href="AdminClanek/posundolu/'.$clanek['clanky_id'].'/'.$clanek['poradi'].'">▼</a>';
     ?>       
        <tr>
-            <td><a href="clanek/<?= $clanek['url'] ?>"><?= $clanek['titulek'] ?></td>
+            <td><a href="/<?= $clanek['url'] ?>"><?= $clanek['titulek'] ?></td>
             <td><?= $sipkanahoru.'</br>'.$sipkadolu ?></td>
             <td><a href="AdminClanek/edit/<?= $clanek['clanky_id'] ?>">Upravit</td>
             <td><a href="AdminClanek/vymaz/<?= $clanek['clanky_id'] ?>" title="Vymazat">X</a></td>
@@ -47,7 +47,7 @@
 ?>
    </table>
         <p>
-        <h3><a href="adminclanek/novy">Přidat nový článek</h3>
+        <h3><a href="adminClanek/novy">Přidat nový článek</h3>
         </p>
 
 

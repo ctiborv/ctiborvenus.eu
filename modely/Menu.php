@@ -34,7 +34,7 @@ class Menu {
                 
             }
             $menuklient[]=array('url'=>'/kontakt','nazev'=>'kontakt');
-            $menuklient[]=array('url'=>'/pocasi','nazev'=>'počasí');
+//            $menuklient[]=array('url'=>'/pocasi','nazev'=>'počasí');
             if ($_SERVER["SERVER_NAME"]=='localhost') {
                 $menuklient[]=array('url'=>'/login','nazev'=>'Přihlásit');
             }

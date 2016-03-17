@@ -38,4 +38,5 @@ session_start();
 $smerovac = new SmerovacKontroler();
 $smerovac->zpracuj(array($_SERVER['REQUEST_URI']));
 // Vyrenderování šablony
+header("Content-Type: text/html; charset=utf-8");
 $smerovac->vypisPohled();

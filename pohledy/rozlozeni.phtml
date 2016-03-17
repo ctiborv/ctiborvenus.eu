@@ -1,64 +1,71 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:fb="http://www.facebook.com/2008/fbml"
+  xmlns:og="http://ogp.me/ns#"
+  xml:lang="cs"
+  lang="cs"
+>
 	<head>
 
 		<!-- Basic -->
 		<base href="/" />
-		<meta charset="utf-8">
-                <meta http-equiv="X-UA-Compatible" content="IE=edge">	
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+                <meta http-equiv="X-UA-Compatible" content="IE=edge"/>	
 
 		<title><?= $titulek ?></title>
 
 		<meta name="keywords" content="webdesign, webové stránky, zrychlení počítače, administrace, webovky" />
-		<meta name="description" content="Tvorba webových stránek s profesionálním webdesignem, administrace stránek. Servis a urychlení počítačů, notebooků, údržba počítačových sítí wi-fi a LAN. ">
-                <meta name="author" content="Ctibor Venus">
+		<meta name="description" content="Tvorba webových stránek s profesionálním webdesignem, administrace stránek. Servis a urychlení počítačů, notebooků, údržba počítačových sítí wi-fi a LAN. "/>
+                <meta name="author" content="Ctibor Venus" />
                 <meta name="robots" content="index, follow" /> 
 
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon" />
-		<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+		<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png"/>
 
 		<!-- Mobile Metas -->
-		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
 		<!-- Web Fonts  -->
-		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css"/>
 
 		<!-- Vendor CSS -->
-		<link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.css">
-		<link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.css">
-		<link rel="stylesheet" href="/assets/vendor/simple-line-icons/css/simple-line-icons.css">
-		<link rel="stylesheet" href="/assets/vendor/owl.carousel//assets/owl.carousel.min.css">
-		<link rel="stylesheet" href="/assets/vendor/owl.carousel//assets/owl.theme.default.min.css">
-		<link rel="stylesheet" href="/assets/vendor/magnific-popup/magnific-popup.css">
+		<link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.css"/>
+		<link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.css"/>
+		<link rel="stylesheet" href="/assets/vendor/simple-line-icons/css/simple-line-icons.css"/>
+		<link rel="stylesheet" href="/assets/vendor/owl.carousel//assets/owl.carousel.min.css"/>
+		<link rel="stylesheet" href="/assets/vendor/owl.carousel//assets/owl.theme.default.min.css"/>
+		<link rel="stylesheet" href="/assets/vendor/magnific-popup/magnific-popup.css"/>
 
 		<!-- Theme CSS -->
-		<link rel="stylesheet" href="/assets/css/theme.css">
-		<link rel="stylesheet" href="/assets/css/theme-elements.css">
-		<link rel="stylesheet" href="/assets/css/theme-blog.css">
-		<link rel="stylesheet" href="/assets/css/theme-shop.css">
-		<link rel="stylesheet" href="/assets/css/theme-animate.css">
+		<link rel="stylesheet" href="/assets/css/theme.css"/>
+		<link rel="stylesheet" href="/assets/css/theme-elements.css"/>
+		<link rel="stylesheet" href="/assets/css/theme-blog.css"/>
+		<link rel="stylesheet" href="/assets/css/theme-shop.css"/>
+		<link rel="stylesheet" href="/assets/css/theme-animate.css"/>
 
 		<!-- Current Page CSS -->
-		<link rel="stylesheet" href="/assets/vendor/rs-plugin/css/settings.css" media="screen">
-		<link rel="stylesheet" href="/assets/vendor/rs-plugin/css/layers.css" media="screen">
-		<link rel="stylesheet" href="/assets/vendor/rs-plugin/css/navigation.css" media="screen">
-		<link rel="stylesheet" href="/assets/vendor/circle-flip-slideshow/css/component.css" media="screen">
+		<link rel="stylesheet" href="/assets/vendor/rs-plugin/css/settings.css" media="screen"/>
+		<link rel="stylesheet" href="/assets/vendor/rs-plugin/css/layers.css" media="screen"/>
+		<link rel="stylesheet" href="/assets/vendor/rs-plugin/css/navigation.css" media="screen"/>
+		<link rel="stylesheet" href="/assets/vendor/circle-flip-slideshow/css/component.css" media="screen"/>
 
 		<!-- Skin CSS -->
-		<link rel="stylesheet" href="/assets/css/skins/default.css">
+		<link rel="stylesheet" href="/assets/css/skins/default.css"/>
 
 		<!-- Theme Custom CSS -->
-		<link rel="stylesheet" href="/assets/css/custom.css">
+		<link rel="stylesheet" href="/assets/css/custom.css"/>
 
 		<!-- Head Libs -->
-		<script src="/assets/vendor/modernizr/modernizr.js"></script>
+		<script type="text/javascript" src="/assets/vendor/modernizr/modernizr.js"></script>
                 <?php if ($_SESSION['admin']==1) { ?>
                         <script type="text/javascript" src="assets/js/tinymce/tinymce.min.js"></script>
                         <script type="text/javascript" src="assets/js/tinymce/tinymcestart.js"> </script>
                 <?php } ?>
 
-	</head>
+        </head>
+    
 	<body>
 		<div class="body">
 			<header id="header" data-plugin-options='{"stickyEnabled": true, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": true, "stickyStartAt": 57, "stickySetTop": "-57px", "stickyChangeLogo": true}'>
@@ -166,7 +173,7 @@
 						<div class="col-md-3">
 							<h4>O mně</h4>
               <p>Jsem IT specialista, provádím servis výpočetní techniky, tvorbu webových stránek s responsivním designem, úpravy redakčních systémů a programování na zakázku.</p>
-              <p>                                                                                            <a href="/pocasi"><i class="fa fa-umbrella"></i> Počasí v Řídeči</a>	</p>
+              <p>Také jsem nadšeny amatérský meteorolog: <a href="/pocasi"><i class="fa fa-umbrella"></i> Počasí v Řídeči</a>	</p>
 
 						</div>
 					</div>
@@ -180,7 +187,7 @@
 								</a>
 							</div>
 							<div class="col-md-7">
-								<p>© Copyright Ctibor Venus 2015. Všechna práva vyhrazena.</p>
+								<p>© Copyright Ctibor Venus 2016. Všechna práva vyhrazena.</p>
 							</div>
 							<div class="col-md-4">
 								<nav id="sub-menu">

@@ -53,7 +53,7 @@ class SmerovacKontroler extends Kontroler
                             $this->kontroler = new $tridaKontroleru;
                         }
                         else {
-                            $this->presmeruj('chyba');
+                          $this->kontroler = new ChybaKontroler();  
                             
                         }
                     }
