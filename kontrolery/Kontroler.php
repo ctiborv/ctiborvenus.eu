@@ -19,6 +19,7 @@ abstract class Kontroler
     protected $pohled = "";
 	// Hlavička HTML stránky
     protected $hlavicka = array('titulek' => '', 'klicova_slova' => '', 'popis' => '');
+    protected $preklady;
 
 	// Ošetří proměnnou pro výpis do HTML stránky
 	private function osetri($x = null)
@@ -42,10 +43,12 @@ abstract class Kontroler
 	// Vyrenderuje pohled
         public function vypisPohled()
         {
+            $this->preklady= new Preklady();
             if ($this->pohled)
             {
                 if (!$_SESSION['admin']) {
                         extract($this->osetri($this->data));
+                        extract($this->neodata);
                 }
                 else {
                         extract($this->data);

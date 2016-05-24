@@ -3,8 +3,8 @@
   xmlns="http://www.w3.org/1999/xhtml"
   xmlns:fb="http://www.facebook.com/2008/fbml"
   xmlns:og="http://ogp.me/ns#"
-  xml:lang="cs"
-  lang="cs"
+  xml:lang="<?=$_SESSION['xml_jazyk']?>"
+  lang="<?=$_SESSION['xml_jazyk']?>"
 >
 	<head>
 
@@ -78,6 +78,9 @@
                                                                             <img alt="Ctibor Venus" height="60" data-sticky-height="40" data-sticky-top="33" src="/assets/img/logosf.png">
 									</a>
 								</div>
+                                                            <div class="header-motto" >
+                                                                <h1 data-sticky-top="48" >Ctibor Venus <span><?=$this->preklady->VratPreklad('webdesigner, programátor') ?></span></h1>
+                                                            </div>
                                                                 
                                                            
 
@@ -87,7 +90,7 @@
 									<div class="header-search hidden-xs">
 										<form id="searchForm" action="/hledat" method="get">
 											<div class="input-group">
-												<input type="text" class="form-control" name="q" id="q" placeholder="Hledat..." required>
+												<input type="text" class="form-control" name="q" id="q" placeholder="<?= $this->preklady->VratPreklad('Hledat...')?>" required>
 												<span class="input-group-btn">
 													<button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
 												</span>
@@ -96,6 +99,13 @@
 									</div>
 									<nav class="header-nav-top">
 										<ul class="nav nav-pills">
+                                                                                        <li><?php 
+                                                                                        if ($_SESSION['jazyk']!=JAZYK_CS) echo '<a href="/"><img src="img/cz.png"></a>';
+                                                                                        if ($_SESSION['jazyk']!=JAZYK_EN) echo '<a href="/en"><img src="img/en.png"></a>';
+                                                                                        if ($_SESSION['jazyk']!=JAZYK_DE) echo '<a href="/de"><img src="img/de.png"></a>';
+                                                                                            
+                                                                                            ?>
+                                                                                        </li>
 											<li>
 												<span class="ws-nowrap"><i class="fa fa-envelope"></i> info@ctiborvenus.eu</span>
 											</li>
@@ -121,7 +131,7 @@
                                                                                     
                                                                                                                       <?php foreach ($menus as $menu) {?>
                                                                                             <li <?php if ($menu['aktivni']) echo "class=\"active\"";  ?>>
-                                                                                                <a href="<?= $menu['url'] ?>"  ><?= $menu["nazev"] ?></a>
+                                                                                                <a href="<?= $menu['url'].$_SESSION['prefix_jazyk'] ?>"  ><?= $this->preklady->VratPreklad($menu["nazev"]) ?></a>
                                                                                             </li>
                                                                     <?php }?>
                                                                                         </ul>
@@ -140,44 +150,8 @@
                         </div>
 			<div id="footer-wrapper">
 			<footer id="footer">
-				<div class="container">
-					<div class="row">
-						<div class="footer-ribbon">
-							<span>Kontakt</span>
-						</div>             
-						<div class="col-md-3">
-							<div class="contact-details">
-								<h4>Kontaktní údaje</h4>
-								<ul class="contact">
-									<li><p><i class="fa fa-map-marker"></i> <strong>Addresa:</strong> Řídeč 330, Šternberk, 78501</p></li>
-									<li><p><i class="fa fa-phone"></i> <strong>Telefon:</strong> + 420 605 260 772</p></li>
-									<li><p><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:info@ctiborvenus.eu">info@ctiborvenus.eu</a></p></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<h4>Fakturační údaje</h4>
-								<ul class="contact">
-									<li><p><i class="fa fa-list"></i> <strong>IČO:</strong> 03773540</p></li>
-									<li><p><i class="fa fa-bank"></i> <strong>Bankovní spojení:</strong> 2630709013/0800</p></li>
-								</ul>
-						</div>
-						<div class="col-md-3">
-							<h4>Sociální sítě</h4>
-							<ul class="social-icons">
-								<li class="social-icons-facebook"><a href="http://www.facebook.com/ctiborvenus" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-								<li class="social-icons-twitter"><a href="http://twitter.com/CtiborV" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-								<li class="social-icons-linkedin"><a href="https://cz.linkedin.com/pub/ctibor-venus/b7/523/331" target="_blank" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-							</ul>
-						</div>
-						<div class="col-md-3">
-							<h4>O mně</h4>
-              <p>Jsem IT specialista, provádím servis výpočetní techniky, tvorbu webových stránek s responsivním designem, úpravy redakčních systémů a programování na zakázku.</p>
-              <p>Také jsem nadšeny amatérský meteorolog: <a href="/pocasi"><i class="fa fa-umbrella"></i> Počasí v Řídeči</a>	</p>
+                            <?= $footer ?>
 
-						</div>
-					</div>
-				</div>
 				<div class="footer-copyright">
 					<div class="container">
 						<div class="row">
@@ -187,7 +161,7 @@
 								</a>
 							</div>
 							<div class="col-md-7">
-								<p>© Copyright Ctibor Venus 2016. Všechna práva vyhrazena.</p>
+								<p>© Copyright Ctibor Venus 2016. <?= $this->preklady->VratPreklad('Všechna práva vyhrazena.')?></p>
 							</div>
 							<div class="col-md-4">
 								<nav id="sub-menu">
@@ -241,8 +215,7 @@
 
                 
 
-		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
-		<script>
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -250,8 +223,8 @@
 
   ga('create', 'UA-64905220-1', 'auto');
   ga('send', 'pageview');
-  	</script>
-		 -->
+
+</script>
 
 	</body>
 </html>

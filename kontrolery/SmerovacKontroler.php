@@ -42,10 +42,28 @@ class SmerovacKontroler extends Kontroler
                        $this->kontroler = new AdminClanekKontroler();
                     }
                     else {
+                        $_SESSION['jazyk']=JAZYK_CS;
+                        $_SESSION['prefix_jazyk']='';
+                        $_SESSION['xml_jazyk']=XML_CS;
                         $this->kontroler = new ClanekKontroler();
                     }
                 else {
                     $nazevStranky = $naparsovanaURL[0];
+                    if ($nazevStranky=='en' OR $nazevStranky=='de') {
+                        if ($nazevStranky=='en') {
+                            $_SESSION['jazyk']=JAZYK_EN;
+                            $_SESSION['prefix_jazyk']=PREFIX_EN;
+                            $_SESSION['xml_jazyk']=XML_EN;
+                        }    
+                        else {
+                            $_SESSION['jazyk']=JAZYK_DE;
+                            $_SESSION['prefix_jazyk']=PREFIX_DE;
+                            $_SESSION['xml_jazyk']=XML_DE;
+                        }
+                            
+                        $nazevStranky="";
+                    }
+                    
                     $this->clanek_Kontroler = new ClanekKontroler();
                     if (!$this->clanek_Kontroler->jeClanek($nazevStranky)){
                         $tridaKontroleru=ucwords($nazevStranky).'Kontroler';
@@ -53,10 +71,10 @@ class SmerovacKontroler extends Kontroler
                             $this->kontroler = new $tridaKontroleru;
                         }
                         else {
-                          $this->kontroler = new ChybaKontroler();  
+                            $this->kontroler = new ChybaKontroler();  
+                          }
                             
-                        }
-                    }
+                     }
                     else 
                         $this->kontroler = $this->clanek_Kontroler;
                 }

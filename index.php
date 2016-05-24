@@ -35,6 +35,29 @@ else {
 session_start();
 
 // Vytvoření routeru a zpracování parametrů od uživatele z URL
+
+const JAZYK_CS = 0;
+const JAZYK_EN = 1;
+const JAZYK_DE = 2;
+
+const PREFIX_EN = '/en';
+const PREFIX_DE = '/de';
+
+const XML_CS = 'cs';
+const XML_EN = 'en';
+const XML_DE = 'de';
+
+
+
+
+if (!isset($_SESSION['jazyk'])) {
+        $_SESSION['jazyk']=JAZYK_CS;
+        $_SESSION['prefix_jazyk']='';
+        $_SESSION['xml_jazyk']=XML_CS;
+}
+        
+
+
 $smerovac = new SmerovacKontroler();
 $smerovac->zpracuj(array($_SERVER['REQUEST_URI']));
 // Vyrenderování šablony

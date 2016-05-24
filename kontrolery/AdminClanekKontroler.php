@@ -37,7 +37,7 @@ class AdminClanekKontroler extends Kontroler {
 		{
                     
                         if ($parametry[1]=='vymaz') {
-                            $this->_kontrolerMd->vymazClanek($parametry[1]);
+                            $this->_kontrolerMd->vymazClanek($parametry[2]);
                             $this->presmeruj('adminClanek/');                        
                         }
                         

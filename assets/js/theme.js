@@ -2918,11 +2918,21 @@ window.theme = {};
 						logoSmallWidth = parseInt($logo.attr('data-sticky-width') ? $logo.attr('data-sticky-width') : 'auto'),
 						logoSmallHeight = parseInt($logo.attr('data-sticky-height') ? $logo.attr('data-sticky-height') : 'auto');
 
-					if (self.options.stickyChangeLogoWrapper) {
+                                        var $logoWrapperMotto = self.options.wrapper.find('.header-motto'),
+						$logoMotto = $logoWrapperMotto.find('h1'),
+						logoMottoWidth = $logoMotto.attr('width'),
+						logoMottoHeight = $logoMotto.attr('height'),
+						logoMottoSmallTop = parseInt($logoMotto.attr('data-sticky-top') ? $logoMotto.attr('data-sticky-top') : 0),
+						logoMottoSmallWidth = parseInt($logoMotto.attr('data-sticky-width') ? $logoMotto.attr('data-sticky-width') : 'auto'),
+						logoMottoSmallHeight = parseInt($logoMotto.attr('data-sticky-height') ? $logoMotto.attr('data-sticky-height') : 'auto');
+
+
+                                        if (self.options.stickyChangeLogoWrapper) {
 						$logoWrapper.css({
 							'width': $logo.outerWidth(true),
 							'height': $logo.outerHeight(true)
 						});
+                                                
 					}
 
 					self.changeLogo = function(activate) {
@@ -2932,16 +2942,26 @@ window.theme = {};
 								'width': logoSmallWidth,
 								'height': logoSmallHeight
 							});
+							$logoMotto.css({
+								'top': logoMottoSmallTop,
+								'font-size': '0.9em',
+							});
+                                                        
 						} else {
 							$logo.css({
 								'top': 0,
 								'width': logoWidth,
 								'height': logoHeight
 							});
+							$logoMotto.css({
+								'top': 30,
+								'font-size': '1.3em',
+							});
 						}
 					}
 
-				}
+
+    			}
 
 				return this;
 			},
